@@ -1,0 +1,167 @@
+/* Map component styles */
+.map-view {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .map-canvas {
+    flex: 1;
+    background-color: #e5e7eb;
+    position: relative;
+  }
+  
+  .map-loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #f3f4f6;
+  }
+  
+  .map-loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #4a60c9;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .mock-map {
+    height: 100%;
+    width: 100%;
+    background-color: #e5e7eb;
+    background-image: 
+      linear-gradient(rgba(128, 128, 128, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(128, 128, 128, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    position: relative;
+  }
+  
+  .map-center-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #4a60c9;
+    font-size: 24px;
+  }
+  
+  .map-route-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 3px;
+    background-color: #4a60c9;
+    transform-origin: left center;
+    transform: rotate(-30deg);
+  }
+  
+  .map-directions-panel {
+    background-color: white;
+    border-top: 1px solid #e5e7eb;
+    padding: 15px;
+    max-height: 40%;
+    overflow-y: auto;
+  }
+  
+  .directions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 10px;
+  }
+  
+  .directions-summary {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .directions-distance {
+    font-weight: 500;
+    color: #111827;
+  }
+  
+  .directions-duration {
+    color: #6b7280;
+  }
+  
+  .sms-alert-button {
+    background-color: #4a60c9;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .sms-alert-button:hover {
+    background-color: #3b4ca3;
+  }
+  
+  .directions-steps {
+    margin-top: 15px;
+  }
+  
+  .direction-step {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: flex-start;
+  }
+  
+  .step-number {
+    width: 24px;
+    height: 24px;
+    background-color: #4a60c9;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  
+  .step-details {
+    flex: 1;
+  }
+  
+  .step-instruction {
+    margin-bottom: 5px;
+    color: #111827;
+  }
+  
+  .step-distance {
+    font-size: 12px;
+    color: #6b7280;
+  }
+  
+  /* Responsive map styles */
+  @media (max-width: 768px) {
+    .directions-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .map-directions-panel {
+      max-height: 50%;
+    }
+  }

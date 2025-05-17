@@ -1,0 +1,103 @@
+/* Common component styles */
+
+/* Input field styles */
+.input-field-container {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #d1d5db;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #4a60c9;
+  }
+  
+  .input-field::placeholder {
+    color: #9ca3af;
+  }
+  
+  /* Button styles */
+  .button {
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+  }
+  
+  .button.primary {
+    background-color: #4a60c9;
+    color: white;
+  }
+  
+  .button.secondary {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+  }
+  
+  .button.full-width {
+    width: 100%;
+  }
+  
+  .button:hover {
+    opacity: 0.9;
+  }
+  
+  .button:active {
+    transform: scale(0.98);
+  }
+  
+  /* Search bar styles */
+  .search-container {
+    width: 100%;
+  }
+  
+  .search-form {
+    display: flex;
+    position: relative;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: #f9fafb;
+  }
+  
+  .search-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 8px;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #4a60c9;
+  }
