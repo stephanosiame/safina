@@ -1,6 +1,9 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Import for location model
 from django.conf import settings
@@ -13,6 +16,8 @@ class User(AbstractUser):
     """
     Extended User model with additional fields as shown in ERD
     """
+    # Make email field unique
+    email = models.EmailField(unique=True)
     phone_no = models.CharField(max_length=15, blank=True, null=True)
     ROLES = [
         ('student', 'Student'),
@@ -41,7 +46,6 @@ class User(AbstractUser):
     
     class Meta:
         db_table = 'auth_user'  # Use the same table as Django's default User
-        
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')

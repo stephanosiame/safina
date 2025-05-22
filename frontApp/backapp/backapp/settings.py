@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-your-secret-key-here'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True 
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
@@ -123,7 +123,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_THROTTLE_CLASSES': [
         'rest_framework.throttling.AnonRateThrottle',
@@ -166,7 +166,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CORS settings
 CORS_ALLOW_ALL_ORIGINS = True  # Only for development
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React frontend
+    "http://localhost:5173",  # React frontend
 ]
 
 
@@ -175,7 +175,7 @@ SMS_API_SECRET = os.getenv("eaa80f632bcfefb238f456a6776d1cd9")
 SMS_FROM_NUMBER = os.getenv("+255740471547")
 
 # Google Maps API Key
-# GOOGLE_MAPS_API_KEY =  os.getenv("")
+GOOGLE_MAPS_API_KEY =  os.getenv("AIzaSyC8nN7oQdY9tJ4TjsNtH-EGhLn05uBMNZA")
 
 # Celery settings for background tasks
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
